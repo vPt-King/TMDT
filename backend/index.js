@@ -16,13 +16,14 @@ const corsOptions ={
 }
 
 app.use(cors(corsOptions)) // Use this after the variable declaration
-const mysql = require('mysql');
+const mysql2 = require('mysql2');
 
-const connection = mysql.createConnection({
-  host: 'localhost',
+const connection = mysql2.createConnection({
+  host: 'mysql',
   user: 'root',
   password: 'conbo2chan',
-  database: 'tmdt'
+  database: 'tmdt',
+  port:'3306'
 });
 
 connection.connect(function(err) {
