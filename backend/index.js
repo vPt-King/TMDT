@@ -35,7 +35,7 @@ connection.connect(function(err) {
 });
 
 app.get('/', (req, res) => {
-  res.send('Hello World!')
+  res.send('Hello World! 2 hahah')
 })
 
 app.post("/api/register", (req,res)=>{
