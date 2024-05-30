@@ -1,4 +1,3 @@
-version: '3'
 services:
   backend:
     container_name: nodejs
@@ -18,12 +17,13 @@ services:
     command: mysqld --default-authentication-plugin=mysql_native_password --character-set-server=utf8mb4 --collation-server=utf8mb4_unicode_ci
     restart: always
     environment:
+      - MYSQL_DATABASE=tmdt
       - MYSQL_ROOT_PASSWORD=conbo2chan
-      - MYSQL_DATABASE=TMDT
     ports:
       - '3306:3306'
     volumes: 
       - ./db:/var/lib/mysql
+      - ./Dump20240530/:/docker-entrypoint-initdb.d/
   
 
 
