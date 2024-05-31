@@ -1,2 +1,2 @@
 
-docker run -d -p3306:3306 --name mysql mysql:tmdt
+docker run -d -p3306:3306 -v ./database/db:/var/lib/mysql --name mysql mysql:tmdt
