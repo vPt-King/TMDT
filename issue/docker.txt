@@ -1,3 +1,4 @@
 + using service name and port to connect nodejs and mysql
 + 2 container phai cung network thi moi giao tiep duoc voi nhau
 + Chay dockerfile cua mysql rieng
++ Lỗi cors: bỏ dấu / ở cuối trong origin của file index.js backend

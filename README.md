@@ -1,7 +1,12 @@
 Docker:
++ Cấu hình 3 container chạy backend: nodejs, database mysql, frontend nginx 
++ Build dockerfile trong mỗi thư mục ra thành image
++ docker run -d -p3306:3306 -v ./database/db:/var/lib/mysql --name mysql mysql:tmdt 
++ docker run -d -p80:80 --name frontend frontend:tmdt
++ docker run -d -p3000:3000 --name backend backend:tmdt
 
-+ Build dockerfile trong /database ra thành image
-+ Chạy câu lệnh docker run -d -p3306:3306 -v ./database/db:/var/lib/mysql --name mysql mysql:tmdt 
-để lưu lại data thay đổi trong mysql container
-+ chạy command docker compose -f docker-compose.yaml để chạy container nodejs và nginx
-+ Để dừng container thì chạy Ctrl+C đối với màn hình cmd của nodejs và nginx, dùng docker stop mysql để dừng container mysql
+sudo docker network connect my-network backend
+sudo docker network connect my-network frontend
+sudo docker network connect my-network mysql
+
+(Có thể phải chạy lại backend nếu cần)
