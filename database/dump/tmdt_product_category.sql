@@ -32,7 +32,7 @@ CREATE TABLE `product_category` (
   KEY `prodcut_category_2_idx` (`id_category`),
   CONSTRAINT `prodcut_category_2` FOREIGN KEY (`id_category`) REFERENCES `category` (`id`),
   CONSTRAINT `product_category` FOREIGN KEY (`id_product`) REFERENCES `product` (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=50 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+) ENGINE=InnoDB AUTO_INCREMENT=50 DEFAULT CHARSET=utf8 COLLATE=utf8_general_ci;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --

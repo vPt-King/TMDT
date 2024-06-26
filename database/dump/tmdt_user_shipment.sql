@@ -32,7 +32,7 @@ CREATE TABLE `user_shipment` (
   UNIQUE KEY `id_UNIQUE` (`id`),
   KEY `id_user_shipment_user_idx` (`id_user`),
   CONSTRAINT `id_user_shipment_user` FOREIGN KEY (`id_user`) REFERENCES `user` (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=8 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+) ENGINE=InnoDB AUTO_INCREMENT=8 DEFAULT CHARSET=utf8 COLLATE=utf8_general_ci;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --

@@ -1,54 +1,43 @@
 apiVersion: apps/v1
 kind: Deployment
 metadata:
-  name: mysql-deployment
-  labels:
-    app: mysql
+  name: mysql
 spec:
   selector:
     matchLabels:
       app: mysql
+  strategy:
+    type: Recreate
   template:
     metadata:
       labels:
         app: mysql
     spec:
       containers:
-      - name: mysql
-        image: mysql:8.0
-        ports:
-        - containerPort: 3306
+      - image: mysql:5.6
+        name: mysql
         env:
-        - name: MYSQL_ALLOW_EMPTY_PASSWORD
-          valueFrom:
-            secretKeyRef:
-              name: mysql-secret
-              key: MYSQL_ALLOW_EMPTY_PASSWORD
         - name: MYSQL_ROOT_PASSWORD
           valueFrom:
             secretKeyRef:
               name: mysql-secret
-              key: MYSQL_ROOT_PASSWORD
-        - name: MYSQL_DATABASE
-          valueFrom:
-            secretKeyRef:
-              name: mysql-secret
-              key: MYSQL_DATABASE
+              key: password
+        ports:
+        - containerPort: 3306
+          name: mysql
         volumeMounts:
         - name: mysql-persistent-storage
           mountPath: /var/lib/mysql
         - name: mysql-initdb
           mountPath: /docker-entrypoint-initdb.d
-      volumes: 
+      volumes:
       - name: mysql-persistent-storage
         persistentVolumeClaim:
-          claimName: mysql-pvc
+          claimName: mysql-pv-claim
       - name: mysql-initdb
         configMap:
           name: mysql-initdb
-
 ---
-
 apiVersion: v1
 kind: Service
 metadata:
