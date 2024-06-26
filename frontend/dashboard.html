@@ -1,0 +1,276 @@
+<!DOCTYPE html>
+<html lang="zxx">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="description" content="Yoga Studio Template" />
+    <meta name="keywords" content="Yoga, unica, creative, html" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <title>Cosmetics</title>
+
+    <!-- Google Font -->
+    <link
+      href="https://fonts.googleapis.com/css?family=Amatic+SC:400,700&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      href="https://fonts.googleapis.com/css?family=Montserrat:100,200,300,400,500,600,700,800,900&display=swap"
+      rel="stylesheet"
+    />
+
+    <!-- Css Styles -->
+    <link rel="stylesheet" href="css/bootstrap.min.css" type="text/css" />
+    <link rel="stylesheet" href="css/font-awesome.min.css" type="text/css" />
+    <link rel="stylesheet" href="css/nice-select.css" type="text/css" />
+    <link rel="stylesheet" href="css/owl.carousel.min.css" type="text/css" />
+    <link rel="stylesheet" href="css/magnific-popup.css" type="text/css" />
+    <link rel="stylesheet" href="css/slicknav.min.css" type="text/css" />
+    <link rel="stylesheet" href="css/style.css" type="text/css" />
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/charts.css/dist/charts.min.css"
+    />
+    <script
+      type="text/javascript"
+      src="https://www.gstatic.com/charts/loader.js"
+    ></script>
+  </head>
+
+  <body>
+    <!-- Page Preloder -->
+    <div id="preloder">
+      <div class="loader"></div>
+    </div>
+
+    <!-- Header Section Begin -->
+    <header class="header-section">
+      <div class="container-fluid">
+        <div class="inner-header">
+          <div class="logo">
+            <a href="./index.html"><img src="img/logo.jpg" alt="" /></a>
+          </div>
+
+          <nav class="main-menu mobile-menu">
+            <ul>
+              <li><a href="./orderlist.html">Đơn hàng</a></li>
+              <li>
+                <a href="./admin_user-management.html">Người dùng</a>
+              </li>
+              <li>
+                <a href="./admin_product-management.html">Sản phẩm</a>
+              </li>
+              <li>
+                <a href="./admin_add-product.html">Thêm sản phẩm</a>
+              </li>
+              <li><a href="./dashboard.html">Thống kê</a></li>
+              <li id="sign_out">
+                <a href="./login.html">Đăng xuất</a>
+              </li>
+            </ul>
+          </nav>
+        </div>
+      </div>
+    </header>
+    <!-- Header End -->
+    <br />
+    <div class="dashboard">
+      <div class="first_grap">
+        <div class="order order-day">
+          <div class="title">Đơn hàng trong ngày</div>
+          <div class="number" id="order_day">15</div>
+        </div>
+        <div class="order order-month">
+          <div class="title">Đơn hàng trong tháng</div>
+          <div class="number" id="order_month">30</div>
+        </div>
+        <div class="order cancel-order-month">
+          <div class="title">Đơn hàng bị hủy trong tháng</div>
+          <div class="number" id="cancle_order">9</div>
+        </div>
+      </div>
+      <div class="second_grap">
+        <div class="best-sell-month">
+          <div id="barchart_values" style="width: 900px; height: 300px"></div>
+        </div>
+        <div class=""></div>
+      </div>
+    </div>
+    <!-- Js Plugins -->
+    <script src="js/jquery-3.3.1.min.js"></script>
+    <script src="js/bootstrap.min.js"></script>
+    <script src="js/jquery.magnific-popup.min.js"></script>
+    <script src="js/jquery.slicknav.js"></script>
+    <script src="js/owl.carousel.min.js"></script>
+    <script src="js/jquery.nice-select.min.js"></script>
+    <script src="js/mixitup.min.js"></script>
+    <script src="js/main.js"></script>
+    <!-- <script src="js/catagories.js"></script> -->
+    <script>
+      function HandleOrderDay() {
+        const today = new Date();
+        const year = today.getFullYear();
+        const month = String(today.getMonth() + 1).padStart(2, "0"); // Add leading zero for single-digit months
+        const day = String(today.getDate()).padStart(2, "0");
+
+        const formattedDate = `${day}/${month}/${year}`;
+        const data = { formattedDate };
+        fetch("http://localhost:3000/api/get-order-day", {
+          method: "POST",
+          body: JSON.stringify(data),
+          headers: { "Content-Type": "application/json" },
+        })
+          .then((res) => {
+            return res.json();
+          })
+          .then((data) => {
+            document.getElementById("order_day").innerHTML = data[0].number;
+          });
+      }
+      HandleOrderDay();
+      function HandleOrderMonth() {
+        const today = new Date();
+        const year = today.getFullYear();
+        const month = String(today.getMonth() + 1).padStart(2, "0");
+        const day = String(today.getDate()).padStart(2, "0");
+
+        const time = `${month}/${year}`;
+        const data = { time };
+
+        fetch("http://localhost:3000/api/get-order-month", {
+          method: "POST",
+          body: JSON.stringify(data),
+          headers: { "Content-Type": "application/json" },
+        })
+          .then((res) => {
+            return res.json();
+          })
+          .then((data) => {
+            console.log(data);
+            document.getElementById("order_month").innerHTML = data[0].num;
+          });
+      }
+      HandleOrderMonth();
+      function HandleCancle() {
+        const today = new Date();
+        const year = today.getFullYear();
+        const month = String(today.getMonth() + 1).padStart(2, "0"); // Add leading zero for single-digit months
+        const day = String(today.getDate()).padStart(2, "0");
+
+        const time = `${month}/${year}`;
+        const data = { time };
+        fetch("http://localhost:3000/api/get-order-cancle", {
+          method: "POST",
+          body: JSON.stringify(data),
+          headers: { "Content-Type": "application/json" },
+        })
+          .then((res) => {
+            return res.json();
+          })
+          .then((data) => {
+            document.getElementById("cancle_order").innerHTML = data[0].num;
+          });
+      }
+      HandleCancle();
+    </script>
+    <script type="text/javascript">
+      google.charts.load("current", { packages: ["corechart"] });
+      google.charts.setOnLoadCallback(drawChart);
+      function drawChart() {
+        const data_arr = [["Element", "Density", { role: "style" }]];
+        const colors = ["#b87333", "silver", "gold", "#e5e4e2"];
+        const today = new Date();
+        const year = today.getFullYear();
+        const month = String(today.getMonth() + 1).padStart(2, "0"); // Add leading zero for single-digit months
+        const day = String(today.getDate()).padStart(2, "0");
+
+        const time = `${month}/${year}`;
+        const data = { time };
+        fetch("http://localhost:3000/api/get-bar-chart", {
+          method: "POST",
+          body: JSON.stringify(data),
+          headers: { "Content-Type": "application/json" },
+        })
+          .then((res) => res.json())
+          .then((res) => {
+            for (let i = 0; i < res.length; i++) {
+              res[i].push(colors[i]);
+              data_arr.push(res[i]);
+            }
+            var data = google.visualization.arrayToDataTable(data_arr);
+
+            var view = new google.visualization.DataView(data);
+            view.setColumns([
+              0,
+              1,
+              {
+                calc: "stringify",
+                sourceColumn: 1,
+                type: "string",
+                role: "annotation",
+              },
+              2,
+            ]);
+
+            var options = {
+              title: "Những sản phẩm bán chạy trong tháng này",
+              width: 600,
+              height: 400,
+              bar: { groupWidth: "95%" },
+              legend: { position: "none" },
+            };
+            var chart = new google.visualization.BarChart(
+              document.getElementById("barchart_values")
+            );
+            chart.draw(view, options);
+          });
+        // var data = google.visualization.arrayToDataTable([
+        //   ["Element", "Density", { role: "style" } ],
+        //   ["Son", 8.94, "#b87333"],
+        //   ["Silver", 10.49, "silver"],
+        //   ["Gold", 65, "gold"],
+        //   ["Platinum", 21.45, "color: #e5e4e2"]
+        // ]);
+      }
+    </script>
+    <style>
+      #product-list a {
+        position: relative;
+        z-index: 2;
+
+        display: inline-block;
+        width: 184px;
+        height: 184px;
+      }
+      .dashboard {
+        margin-left: 60px;
+      }
+      .dashboard .first_grap {
+        display: flex;
+        justify-content: space-around;
+      }
+      .dashboard .order {
+        width: 330px;
+        height: 200px;
+        border: 2px solid blue;
+        border-radius: 10px;
+      }
+      .dashboard .order div {
+        margin: 20px;
+      }
+      .dashboard .order .number {
+        font-size: 60px;
+        margin-left: 60px;
+      }
+      .dashboard .second_grap {
+        margin-bottom: 200px;
+        margin-top: 50px;
+      }
+      .dashboard .second_grap .best-sell-month {
+        border: 1px solid blue;
+        width: 900px;
+        height: 450px;
+        margin-left: 42px;
+      }
+    </style>
+  </body>
+</html>

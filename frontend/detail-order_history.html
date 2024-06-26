@@ -1,0 +1,302 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="description" content="Yoga Studio Template" />
+    <meta name="keywords" content="Yoga, unica, creative, html" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <title>Cosmetics</title>
+
+    <!-- Google Font -->
+    <link
+      href="https://fonts.googleapis.com/css?family=Amatic+SC:400,700&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      href="https://fonts.googleapis.com/css?family=Montserrat:100,200,300,400,500,600,700,800,900&display=swap"
+      rel="stylesheet"
+    />
+
+    <!-- Css Styles -->
+    <link rel="stylesheet" href="css/bootstrap.min.css" type="text/css" />
+    <link rel="stylesheet" href="css/font-awesome.min.css" type="text/css" />
+    <link rel="stylesheet" href="css/nice-select.css" type="text/css" />
+    <link rel="stylesheet" href="css/owl.carousel.min.css" type="text/css" />
+    <link rel="stylesheet" href="css/magnific-popup.css" type="text/css" />
+    <link rel="stylesheet" href="css/slicknav.min.css" type="text/css" />
+    <link rel="stylesheet" href="css/style.css" type="text/css" />
+    <style>
+      .order {
+        margin-left: 59px;
+        margin-right: 59px;
+      }
+      .order div {
+        margin-top: 20px;
+        margin-bottom: 20px;
+      }
+      .order .person {
+        display: flex;
+        justify-content: space-between;
+      }
+      .product ul {
+        list-style: none;
+      }
+      .product ul li {
+        display: flex;
+        justify-content: space-between;
+        padding-bottom: 20px;
+        border-bottom: 1px solid #d9dddc;
+      }
+      .product ul li div {
+        width: 300px;
+      }
+      .product ul li div img {
+        width: 150px;
+        height: 150px;
+      }
+      .show-total #total {
+        font-size: 20px;
+        display: inline-block;
+        position: relative;
+        left: 830px;
+      }
+    </style>
+  </head>
+  <body>
+    <!-- Page Preloder -->
+    <div id="preloder">
+      <div class="loader"></div>
+    </div>
+
+    <!-- Search model -->
+    <div class="search-model">
+      <div class="h-100 d-flex align-items-center justify-content-center">
+        <div class="search-close-switch">+</div>
+        <form class="search-model-form">
+          <input type="text" id="search-input" placeholder="Search here....." />
+        </form>
+      </div>
+    </div>
+    <!-- Search model end -->
+
+    <!-- Header Section Begin -->
+    <header class="header-section">
+      <div class="container-fluid">
+        <div class="inner-header">
+          <div class="logo">
+            <a href="./index.html"><img src="img/logo.jpg" alt="" /></a>
+          </div>
+          <div class="header-right">
+            <img src="img/icons/search.png" alt="" class="search-trigger" />
+            <img src="img/icons/man.png" alt="" />
+            <a href="./shopping-cart.html">
+              <img src="img/icons/bag.png" alt="" />
+              <span>0</span>
+            </a>
+          </div>
+
+          <nav class="main-menu mobile-menu">
+            <ul>
+              <li><a href="./index.html">Trang chủ</a></li>
+              <li><a href="categories.html">Sản phẩm</a></li>
+              <li><a href="./contact.html">Liên hệ</a></li>
+              <li id="login"><a href="./login.html">Đăng nhập</a></li>
+              <li id="register"><a href="./register.html">Đăng kí</a></li>
+              <li id="sign_out" style="display: none">
+                <a href="./login.html">Đăng xuất</a>
+              </li>
+            </ul>
+          </nav>
+        </div>
+      </div>
+    </header>
+    <!-- Header End -->
+
+    <div class="order">
+      <div class="order-id"><h2 id="logo">ORDER</h2></div>
+      <div class="person">
+        <div id="name"><strong>Tên người nhận:</strong></div>
+        <div id="phone"><strong>Số điện thoại:</strong></div>
+        <div id="place"><strong>Địa chỉ:</strong></div>
+      </div>
+      <div class="status">
+        <div id="status"><strong>Trạng thái: </strong></div>
+        <div id="time"><strong>Ngày tạo đơn: </strong></div>
+        <div id="shipment"><strong>Vận chuyển: </strong></div>
+      </div>
+      <div class="product">
+        <ul id="show-product"></ul>
+      </div>
+      <div class="show-total">
+        <div id="total"><strong>Tổng giá trị: </strong></div>
+      </div>
+    </div>
+
+    <!-- Footer Section Begin -->
+    <footer class="footer-section spad">
+      <div class="container">
+        <div class="footer-widget">
+          <div class="row">
+            <div class="col-lg-3 col-sm-6">
+              <div class="single-footer-widget">
+                <h4>About us</h4>
+                <ul>
+                  <li>About Us</li>
+                  <li>Community</li>
+                  <li>Jobs</li>
+                  <li>Shipping</li>
+                  <li>Contact Us</li>
+                </ul>
+              </div>
+            </div>
+            <div class="col-lg-3 col-sm-6">
+              <div class="single-footer-widget">
+                <h4>Customer Care</h4>
+                <ul>
+                  <li>Search</li>
+                  <li>Privacy Policy</li>
+                  <li>2019 Lookbook</li>
+                  <li>Shipping & Delivery</li>
+                  <li>Gallery</li>
+                </ul>
+              </div>
+            </div>
+            <div class="col-lg-3 col-sm-6">
+              <div class="single-footer-widget">
+                <h4>Our Services</h4>
+                <ul>
+                  <li>Free Shipping</li>
+                  <li>Free Returnes</li>
+                  <li>Our Franchising</li>
+                  <li>Terms and conditions</li>
+                  <li>Privacy Policy</li>
+                </ul>
+              </div>
+            </div>
+            <div class="col-lg-3 col-sm-6">
+              <div class="single-footer-widget">
+                <h4>Information</h4>
+                <ul>
+                  <li>Payment methods</li>
+                  <li>Times and shipping costs</li>
+                  <li>Product Returns</li>
+                  <li>Shipping methods</li>
+                  <li>Conformity of the products</li>
+                </ul>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="social-links-warp">
+        <div class="container">
+          <div class="social-links">
+            <a href="" class="instagram"
+              ><i class="fa fa-instagram"></i><span>instagram</span></a
+            >
+            <a href="" class="pinterest"
+              ><i class="fa fa-pinterest"></i><span>pinterest</span></a
+            >
+            <a href="" class="facebook"
+              ><i class="fa fa-facebook"></i><span>facebook</span></a
+            >
+            <a href="" class="twitter"
+              ><i class="fa fa-twitter"></i><span>twitter</span></a
+            >
+            <a href="" class="youtube"
+              ><i class="fa fa-youtube"></i><span>youtube</span></a
+            >
+            <a href="" class="tumblr"
+              ><i class="fa fa-tumblr-square"></i><span>tumblr</span></a
+            >
+          </div>
+        </div>
+
+        <div class="container text-center pt-5">
+          <p>
+            Copyright &copy;
+            <script>
+              document.write(new Date().getFullYear());
+            </script>
+            All rights reserved | This project is made with
+            <i class="icon-heart color-danger" aria-hidden="true"></i> by
+            <a href="">Team 7</a>
+          </p>
+        </div>
+      </div>
+    </footer>
+    <!-- Footer Section End -->
+
+    <!-- Js Plugins -->
+    <script src="js/jquery-3.3.1.min.js"></script>
+    <script src="js/bootstrap.min.js"></script>
+    <script src="js/jquery.magnific-popup.min.js"></script>
+    <script src="js/jquery.slicknav.js"></script>
+    <script src="js/owl.carousel.min.js"></script>
+    <script src="js/jquery.nice-select.min.js"></script>
+    <script src="js/mixitup.min.js"></script>
+    <script src="js/main.js"></script>
+    <script>
+      function getOrderDetail() {
+        const id = parseInt(localStorage.getItem("order-id"));
+        console.log(id);
+        const data = { id };
+        fetch("http://localhost:3000/api/get-detail-order", {
+          method: "POST",
+          body: JSON.stringify(data),
+          headers: { "Content-Type": "application/json" },
+        })
+          .then((res) => {
+            return res.json();
+          })
+          .then((res) => {
+            console.log(res);
+            document.getElementById("logo").innerHTML += res[0].id;
+            document.getElementById("name").innerHTML += res[0].name;
+            document.getElementById("phone").innerHTML += res[0].phone;
+            document.getElementById("place").innerHTML += res[0].place;
+            document.getElementById("status").innerHTML += res[0].status;
+            document.getElementById("shipment").innerHTML += res[0].shipment;
+            document.getElementById("time").innerHTML += res[0].time;
+          });
+        fetch("http://localhost:3000/api/get-product-order", {
+          method: "POST",
+          body: JSON.stringify(data),
+          headers: { "Content-Type": "application/json" },
+        })
+          .then((res) => {
+            return res.json();
+          })
+          .then((res) => {
+            var total = 0;
+            const show_pro = document.getElementById("show-product");
+            show_pro.innerHTML = `<li>
+                      <div ><strong>Ảnh</strong></div>
+                      <div ><strong>Tên sản phẩm</strong></div>
+                      <div ><strong>Giá</strong></div>
+                      <div ><strong>Số lượng</strong></div>
+                      <div ><strong>Tổng tiền</strong></div>
+                  </li>
+                      `;
+            res.forEach((pro) => {
+              var sub_to = pro.price * pro.quantity;
+              total += sub_to;
+              show_pro.innerHTML += `
+                          <li>
+                              <div class="img"><img src="${pro.img_1}" alt=""></div>
+                              <div class="name">${pro.name}</div>
+                              <div class="price">${pro.price}</div>
+                              <div class="quantity">${pro.quantity}</div>
+                              <div class="sub_total">${sub_to}</div>
+                          </li>
+                          `;
+            });
+            document.getElementById("total").innerHTML += " " + total;
+          });
+      }
+
+      getOrderDetail();
+    </script>
+  </body>
+</html>

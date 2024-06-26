@@ -60,7 +60,7 @@
               <span>0</span>
             </a>
           </div>
-          
+
           <nav class="main-menu mobile-menu">
             <ul>
               <li><a href="./index.html">Trang chủ</a></li>
@@ -68,7 +68,9 @@
               <li><a href="./contact.html">Liên hệ</a></li>
               <li id="login"><a href="./login.html">Đăng nhập</a></li>
               <li id="register"><a href="./register.html">Đăng kí</a></li>
-              <li id="sign_out" style="display: none;"><a href="./login.html">Đăng xuất</a></li>
+              <li id="sign_out" style="display: none">
+                <a href="./login.html">Đăng xuất</a>
+              </li>
             </ul>
           </nav>
         </div>
@@ -110,23 +112,24 @@
             <div class="sidebar">
               <div class="sidebar-header">Price</div>
               <div class="price-range">
-                <input type="text" placeholder="Nhập giá" id="filter_price"/>
+                <input type="text" placeholder="Nhập giá" id="filter_price" />
               </div>
               <div class="filter-button">
-                <button id="button_filter_price" onclick="handleClickFilter(event)">Lọc</button>
+                <button
+                  id="button_filter_price"
+                  onclick="handleClickFilter(event)"
+                >
+                  Lọc
+                </button>
               </div>
             </div>
-
-            
           </div>
           <div class="col-lg-9">
             <div class="row">
               <div class="categories-controls">
                 <div class="row">
                   <div class="col-lg-12">
-                    <div class="categories-filter">
-                      
-                    </div>
+                    <div class="categories-filter"></div>
                   </div>
                 </div>
               </div>
@@ -251,47 +254,27 @@
     <script src="js/main.js"></script>
     <!-- <script src="js/catagories.js"></script> -->
     <script>
-      function handleSort(event)
-      {
-        alert(event.target)
+      function handleSort(event) {
+        alert(event.target);
       }
-      function checkLogin(){
-      let user = JSON.parse(localStorage.getItem("user"));
-      if(!user)
-      {
-        document.getElementById("register").style.display="inline-block"
-        document.getElementById("login").style.display="inline-block"
-        document.getElementById("sign_out").style.display="none"
-      }
-      else{
-        document.getElementById("sign_out").style.display="inline-block"
-        document.getElementById("register").style.display="none"
-        document.getElementById("login").style.display="none"
-      }
-    }
-    checkLogin()
-    function handleClickFilter(event)
-    {
-      
-      const price = parseInt(document.getElementById("filter_price").value);
-      if(!price)
-      {
-        alert("Bạn không được để trống giá tiền")
-      }
-      else{
-        res = []
-        products.forEach(product => {
-
-          if(price - 100000 <= product.price && product.price <= price + 100000 )
-          {
-            res.push(product)
-          }
-        })
-        const products_show = document.getElementById("product-list")
-        products_show.innerHTML = ""
-        for(let i = 0; i < res.length; i++)
-        {
-          products_show.innerHTML += `
+      function handleClickFilter(event) {
+        const price = parseInt(document.getElementById("filter_price").value);
+        if (!price) {
+          alert("Bạn không được để trống giá tiền");
+        } else {
+          res = [];
+          products.forEach((product) => {
+            if (
+              price - 100000 <= product.price &&
+              product.price <= price + 100000
+            ) {
+              res.push(product);
+            }
+          });
+          const products_show = document.getElementById("product-list");
+          products_show.innerHTML = "";
+          for (let i = 0; i < res.length; i++) {
+            products_show.innerHTML += `
           <div class="col-lg-3 col-sm-6 mix all dresses bags">
                       <div class="single-product-item">
                           <figure>
@@ -304,27 +287,26 @@
                           </div>
                       </div>
                   </div>
-          `
+          `;
+          }
         }
       }
-    }
       fetch("http://localhost:3000/api/category")
-      .then(res=>res.json())
-      .then(categories=>{
-        let category_show = document.getElementById("sidebar-list");
-        category_show.innerHTML = ""
-        categories.forEach(category => {
-          category_show.innerHTML += `<li>
+        .then((res) => res.json())
+        .then((categories) => {
+          let category_show = document.getElementById("sidebar-list");
+          category_show.innerHTML = "";
+          categories.forEach((category) => {
+            category_show.innerHTML += `<li>
                   <a class="brand-count" id="${category.id}" style="cursor:pointer;" onclick="handleClick(event)">${category.name}</a>
-                </li>`
-        })
-      })
+                </li>`;
+          });
+        });
 
       const products = JSON.parse(localStorage.getItem("products"));
-      const products_show = document.getElementById("product-list")
+      const products_show = document.getElementById("product-list");
       products_show.innerHTML = "";
-      for(let i = 0; i < products.length; i++)
-      {
+      for (let i = 0; i < products.length; i++) {
         products_show.innerHTML += `
         <div class="col-lg-3 col-sm-6 mix all dresses bags">
                     <div class="single-product-item">
@@ -338,18 +320,17 @@
                         </div>
                     </div>
                 </div>
-        `
+        `;
       }
-    
-      function handleClick(event)
-      {
-        const id = parseInt(event.target.id)
+
+      function handleClick(event) {
+        const id = parseInt(event.target.id);
         fetch(`http://localhost:3000/api/category_product?id=${id}`)
-        .then(res=>res.json())
-        .then(pros => {
-          products_show.innerHTML = "";
-          pros.forEach(pro => {
-            products_show.innerHTML += `
+          .then((res) => res.json())
+          .then((pros) => {
+            products_show.innerHTML = "";
+            pros.forEach((pro) => {
+              products_show.innerHTML += `
         <div class="col-lg-3 col-sm-6 mix all dresses bags">
                     <div class="single-product-item">
                         <figure>
@@ -362,21 +343,20 @@
                         </div>
                     </div>
                 </div>
-        `
-          })
-        })
+        `;
+            });
+          });
       }
     </script>
     <style>
-      #product-list a{
+      #product-list a {
         position: relative;
         z-index: 2;
-        
+
         display: inline-block;
         width: 184px;
         height: 184px;
       }
     </style>
   </body>
-
 </html>

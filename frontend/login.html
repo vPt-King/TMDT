@@ -1,91 +1,95 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="description" content="Yoga Studio Template">
-    <meta name="keywords" content="Yoga, unica, creative, html">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="description" content="Yoga Studio Template" />
+    <meta name="keywords" content="Yoga, unica, creative, html" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
     <title>Login</title>
 
     <!-- Google Font -->
-    <link href="https://fonts.googleapis.com/css?family=Amatic+SC:400,700&display=swap" rel="stylesheet">
-    <link href="https://fonts.googleapis.com/css?family=Montserrat:100,200,300,400,500,600,700,800,900&display=swap"
-        rel="stylesheet">
+    <link
+      href="https://fonts.googleapis.com/css?family=Amatic+SC:400,700&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      href="https://fonts.googleapis.com/css?family=Montserrat:100,200,300,400,500,600,700,800,900&display=swap"
+      rel="stylesheet"
+    />
 
     <!-- Css Styles -->
-    <link rel="stylesheet" href="css/bootstrap.min.css" type="text/css">
-    <link rel="stylesheet" href="css/font-awesome.min.css" type="text/css">
-    <link rel="stylesheet" href="css/nice-select.css" type="text/css">
-    <link rel="stylesheet" href="css/owl.carousel.min.css" type="text/css">
-    <link rel="stylesheet" href="css/magnific-popup.css" type="text/css">
-    <link rel="stylesheet" href="css/slicknav.min.css" type="text/css">
-    <link rel="stylesheet" href="css/style.css" type="text/css">
-</head>
-<body>
+    <link rel="stylesheet" href="css/bootstrap.min.css" type="text/css" />
+    <link rel="stylesheet" href="css/font-awesome.min.css" type="text/css" />
+    <link rel="stylesheet" href="css/nice-select.css" type="text/css" />
+    <link rel="stylesheet" href="css/owl.carousel.min.css" type="text/css" />
+    <link rel="stylesheet" href="css/magnific-popup.css" type="text/css" />
+    <link rel="stylesheet" href="css/slicknav.min.css" type="text/css" />
+    <link rel="stylesheet" href="css/style.css" type="text/css" />
+  </head>
+  <body>
     <div id="preloder">
-        <div class="loader"></div>
+      <div class="loader"></div>
     </div>
-    
-  
-	<!-- Search model end -->
+
+    <!-- Search model end -->
 
     <!-- Header Section Begin -->
     <header class="header-section">
-        <div class="container-fluid">
-          <div class="inner-header">
-            <div class="logo">
-              <a href="./index.html"><img src="img/logo.jpg" alt="" /></a>
-            </div>
-            <div class="header-right">
-              <img src="img/icons/search.png" alt="" class="search-trigger" />
-              <img src="img/icons/man.png" alt="" />
-              <a href="./shopping-cart.html">
-                <img src="img/icons/bag.png" alt="" />
-                <span>0</span>
-              </a>
-            </div>
-            
-            <nav class="main-menu mobile-menu">
-              <ul>
-                <li><a href="./index.html">Trang chủ</a></li>
-                <li><a href="categories.html">Sản phẩm</a></li>
-                <li><a href="./contact.html">Liên hệ</a></li>
-                <li id="login"><a href="./login.html">Đăng nhập</a></li>
-                <li id="register"><a href="./register.html">Đăng kí</a></li>
-                <li id="sign_out" style="display: none;"><a href="./login.html">Đăng xuất</a></li>
-              </ul>
-            </nav>
+      <div class="container-fluid">
+        <div class="inner-header">
+          <div class="logo">
+            <a href="./index.html"><img src="img/logo.jpg" alt="" /></a>
           </div>
+          <div class="header-right">
+            <img src="img/icons/search.png" alt="" class="search-trigger" />
+            <img src="img/icons/man.png" alt="" />
+            <a href="./shopping-cart.html">
+              <img src="img/icons/bag.png" alt="" />
+              <span>0</span>
+            </a>
+          </div>
+
+          <nav class="main-menu mobile-menu">
+            <ul>
+              <li><a href="./index.html">Trang chủ</a></li>
+              <li><a href="categories.html">Sản phẩm</a></li>
+              <li><a href="./contact.html">Liên hệ</a></li>
+              <li id="login"><a href="./login.html">Đăng nhập</a></li>
+              <li id="register"><a href="./register.html">Đăng kí</a></li>
+              <li id="sign_out" style="display: none">
+                <a href="./login.html">Đăng xuất</a>
+              </li>
+            </ul>
+          </nav>
         </div>
-      </header>
+      </div>
+    </header>
     <!-- Header Info Begin -->
-    
 
     <div class="login_area">
-        <div class="login">
-            <div class="title">
-                <h3>ĐĂNG NHẬP</h3>
-            </div>
-            <div class="form">
-                <form>
-                    <div class="email">
-                        <label for="">Email:</label>
-                        <input type="email" id="email">
-                    </div>
-                    <div class="password">
-                        <label for="">Mật khẩu:</label>
-                        <input type="password" id="password">
-                    </div>
-                    
-                </form>
-                <button onclick="handleLogin(event)">Login</button>
-            </div>
-            <div class="option">
-                <a href="#">Quên mật khẩu</a>
-                <a href="/frontend/register.html">Đăng kí</a>
-            </div>
+      <div class="login">
+        <div class="title">
+          <h3>ĐĂNG NHẬP</h3>
         </div>
+        <div class="form">
+          <form>
+            <div class="email">
+              <label for="">Email:</label>
+              <input type="email" id="email" />
+            </div>
+            <div class="password">
+              <label for="">Mật khẩu:</label>
+              <input type="password" id="password" />
+            </div>
+          </form>
+          <button onclick="handleLogin(event)">Login</button>
+        </div>
+        <div class="option">
+          <a href="#">Quên mật khẩu</a>
+          <a href="/frontend/register.html">Đăng kí</a>
+        </div>
+      </div>
     </div>
 
     <script src="js/jquery-3.3.1.min.js"></script>
@@ -97,100 +101,105 @@
     <script src="js/mixitup.min.js"></script>
     <script src="js/main.js"></script>
     <style>
-        .login_area{
-            display: flex;
-            justify-content: center;
-            margin-top: 100px;
-            
-        }
+      .login_area {
+        display: flex;
+        justify-content: center;
+        margin-top: 100px;
+      }
 
-        .login_area .login{
-            height: 300px;
-            width: 500px;
-            background-color: #f1f3f4;
-            border-radius: 10px;
-            
-        }
+      .login_area .login {
+        height: 300px;
+        width: 500px;
+        background-color: #f1f3f4;
+        border-radius: 10px;
+      }
 
-        .login_area .login .title{
-            text-align: center;
-            margin-top:25px;
-        }
+      .login_area .login .title {
+        text-align: center;
+        margin-top: 25px;
+      }
 
-        .login_area .login .form{
-            margin: 50px;
-            margin-top: 20px;
-            margin-bottom: 15px;
-        }
-        .login_area .login .form form div label{
-            width: 100px;
-        }
-        .login_area .login .form form div input{
-            width: 250px;
-            border-radius: 5px;
-        }
-        .login_area .login  button{
-            border-radius: 5px;
-            margin-top: 15px;
-            margin-left: 37%;
-            height: 35px;
-            width: 100px;
-        }
-        .login_area .login .option{
-            display: flex;
-            margin: 50px;
-            margin-top: 0px;
-            justify-content: space-between;
-        }
+      .login_area .login .form {
+        margin: 50px;
+        margin-top: 20px;
+        margin-bottom: 15px;
+      }
+      .login_area .login .form form div label {
+        width: 100px;
+      }
+      .login_area .login .form form div input {
+        width: 250px;
+        border-radius: 5px;
+      }
+      .login_area .login button {
+        border-radius: 5px;
+        margin-top: 15px;
+        margin-left: 37%;
+        height: 35px;
+        width: 100px;
+      }
+      .login_area .login .option {
+        display: flex;
+        margin: 50px;
+        margin-top: 0px;
+        justify-content: space-between;
+      }
 
-        .login_area .login .option a:hover{
-            color:blue;
-        }
+      .login_area .login .option a:hover {
+        color: blue;
+      }
     </style>
     <script>
-        localStorage.removeItem("user")
-        localStorage.removeItem("cart_products")
-        const validateEmail = (email) => {
+      localStorage.removeItem("user");
+      localStorage.removeItem("cart_products");
+      const validateEmail = (email) => {
         return String(email)
-            .toLowerCase()
-            .match(
+          .toLowerCase()
+          .match(
             /^(([^<>()[\]\\.,;:\s@"]+(\.[^<>()[\]\\.,;:\s@"]+)*)|.(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/
-            );
-        };
-        function handleLogin(event)
-        {
-            const email = document.getElementById("email").value;
-            const password=document.getElementById("password").value;
-            if(!validateEmail(email))
-            {
-                alert("Email không hợp lệ")
-            }
-            else if(email == "")
-            {
-                alert("Email không được để trống");
-            }
-            else if(password == "")
-            {
-                alert("Mật khẩu không được để trống");
-            }
-            
-            else{
-                const data = {email,password}
-                fetch("http://localhost:3000/api/login", {
-                method: "POST",
-                body: JSON.stringify(data),
-                headers: { 'Content-Type': 'application/json' }
-                })
-                .then((res) => {
-                    return res.json()
-                })
-                .then((res) => {
-                    console.log(res)
-                    localStorage.setItem("user", JSON.stringify(res))
-                    window.location.href="/frontend/index.html";
-                })
-            }
+          );
+      };
+      function handleLogin(event) {
+        const email = document.getElementById("email").value;
+        const password = document.getElementById("password").value;
+        if (!validateEmail(email)) {
+          alert("Email không hợp lệ");
+        } else if (email == "") {
+          alert("Email không được để trống");
+        } else if (password == "") {
+          alert("Mật khẩu không được để trống");
+        } else if (email === "admin@gmail.com" && password === "admin") {
+          admin = {
+            name: "admin",
+            email: "admin@gmail.com",
+            password: "admin",
+            role: "admin",
+          };
+          localStorage.setItem("admin", JSON.stringify(admin));
+          window.location.href = "/frontend/orderlist.html";
+        } else {
+          const data = { email, password };
+          fetch("http://localhost:3000/api/login", {
+            method: "POST",
+            body: JSON.stringify(data),
+            headers: { "Content-Type": "application/json" },
+          })
+            .then((res) => {
+              return res.json();
+            })
+            .then((res) => {
+              console.log(res);
+              if (res === "Tài khoản hoặc mật khẩu không hợp lệ") {
+                alert(
+                  "Tài khoản hoặc mật khẩu không hợp lệ. Vui lòng nhập lại"
+                );
+              } else {
+                localStorage.setItem("user", JSON.stringify(res));
+                window.location.href = "/frontend/index.html";
+              }
+            });
         }
+      }
     </script>
-</body>
+  </body>
 </html>

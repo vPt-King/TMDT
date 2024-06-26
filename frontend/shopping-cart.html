@@ -60,7 +60,7 @@
               <span>0</span>
             </a>
           </div>
-          
+
           <nav class="main-menu mobile-menu">
             <ul>
               <li><a href="./index.html">Trang chủ</a></li>
@@ -68,7 +68,9 @@
               <li><a href="./contact.html">Liên hệ</a></li>
               <li id="login"><a href="./login.html">Đăng nhập</a></li>
               <li id="register"><a href="./register.html">Đăng kí</a></li>
-              <li id="sign_out" style="display: none;"><a href="./login.html">Đăng xuất</a></li>
+              <li id="sign_out" style="display: none">
+                <a href="./login.html">Đăng xuất</a>
+              </li>
             </ul>
           </nav>
         </div>
@@ -85,7 +87,6 @@
               <h2>Giỏ hàng</h2>
             </div>
           </div>
-         
         </div>
       </div>
     </section>
@@ -117,7 +118,7 @@
             </div>
             <div class="col-lg-5 offset-lg-1 text-left text-lg-right">
               <div class="site-btn clear-btn">Xóa giỏ</div>
-              <div class="site-btn update-btn" onclick="handleUpdateCart(event)">Cập nhật</div>
+              <div class="site-btn update-btn">Cập nhật</div>
             </div>
           </div>
         </div>
@@ -126,7 +127,6 @@
         <div class="container">
           <div class="row">
             <div class="col-lg-12">
-              
               <div class="total-info">
                 <div class="total-table">
                   <table>
@@ -217,7 +217,6 @@
           </div>
         </div>
       </div>
-     
     </footer>
     <!-- Footer Section End -->
 
@@ -231,35 +230,31 @@
     <script src="js/mixitup.min.js"></script>
     <script src="js/main.js"></script>
     <script src="js/shoppingCart.js"></script>
-    <script>
-      function handleUpdateCart(event)
-      {
-        const prod = JSON.parse(localStorage.getItem("cart_products"))
-        canUpdate = true
-        for(let i = 0; i < prod.length ;i++)
-        {
-          const new_quantity = parseInt(document.getElementById("quantity-"+prod[i].id).value);
-          if(new_quantity > prod[i].product_quantity)
-          {
-            canUpdate = false
-            alert("Sản phẩm không đủ số lượng")
+    <!-- <script>
+      function handleUpdateCart(event) {
+        const prod = JSON.parse(localStorage.getItem("cart_products"));
+        canUpdate = true;
+        for (let i = 0; i < prod.length; i++) {
+          const new_quantity = parseInt(
+            document.getElementById("quantity-" + prod[i].id).value
+          );
+          if (new_quantity > prod[i].product_quantity) {
+            canUpdate = false;
+            alert("Sản phẩm không đủ số lượng");
             break;
-          }
-          else if(new_quantity <= 0)
-          {
-            canUpdate = false
-            alert("Sản phẩm không hợp lệ")
+          } else if (new_quantity <= 0) {
+            canUpdate = false;
+            alert("Sản phẩm không hợp lệ");
             break;
-          }
-          else{
-            prod[i].quantity = new_quantity
+          } else {
+            prod[i].quantity = new_quantity;
           }
         }
-        if(canUpdate) {
-          localStorage.setItem("cart_products", JSON.stringify(prod))
-          window.location.reload()
+        if (canUpdate) {
+          localStorage.setItem("cart_products", JSON.stringify(prod));
+          window.location.reload();
         }
       }
-    </script>
+    </script> -->
   </body>
 </html>

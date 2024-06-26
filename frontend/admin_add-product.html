@@ -1,0 +1,192 @@
+<!DOCTYPE html>
+<html lang="zxx">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="description" content="Yoga Studio Template" />
+    <meta name="keywords" content="Yoga, unica, creative, html" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <title>Cosmetics</title>
+
+    <!-- Google Font -->
+    <link
+      href="https://fonts.googleapis.com/css?family=Amatic+SC:400,700&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      href="https://fonts.googleapis.com/css?family=Montserrat:100,200,300,400,500,600,700,800,900&display=swap"
+      rel="stylesheet"
+    />
+
+    <!-- Css Styles -->
+    <link rel="stylesheet" href="css/bootstrap.min.css" type="text/css" />
+    <link rel="stylesheet" href="css/font-awesome.min.css" type="text/css" />
+    <link rel="stylesheet" href="css/nice-select.css" type="text/css" />
+    <link rel="stylesheet" href="css/owl.carousel.min.css" type="text/css" />
+    <link rel="stylesheet" href="css/magnific-popup.css" type="text/css" />
+    <link rel="stylesheet" href="css/slicknav.min.css" type="text/css" />
+    <link rel="stylesheet" href="css/style.css" type="text/css" />
+  </head>
+
+  <body>
+    <!-- Page Preloder -->
+    <div id="preloder">
+      <div class="loader"></div>
+    </div>
+
+    <!-- Header Section Begin -->
+    <header class="header-section">
+      <div class="container-fluid">
+        <div class="inner-header">
+          <div class="logo">
+            <a href="./index.html"><img src="img/logo.jpg" alt="" /></a>
+          </div>
+
+          <nav class="main-menu mobile-menu">
+            <ul>
+              <li><a href="./orderlist.html">Đơn hàng</a></li>
+              <li>
+                <a href="./admin_user-management.html">Người dùng</a>
+              </li>
+              <li>
+                <a href="./admin_product-management.html">Sản phẩm</a>
+              </li>
+              <li>
+                <a href="./admin_product-management.html">Thêm sản phẩm</a>
+              </li>
+              <li><a href="./dashboard.html">Thống kê</a></li>
+              <li id="sign_out">
+                <a href="./login.html">Đăng xuất</a>
+              </li>
+            </ul>
+          </nav>
+        </div>
+      </div>
+    </header>
+    <br />
+    <br />
+    <!-- Header End -->
+
+    <!-- Add Product Page Section Begin -->
+    <section class="add-product-page">
+      <div class="container">
+        <div class="row">
+          <div class="col-lg-12">
+            <h2>Thêm Sản Phẩm Mới</h2>
+            <form id="add-product-form">
+              <div class="form-group">
+                <label for="product-name">Tên Sản Phẩm</label>
+                <input
+                  type="text"
+                  class="form-control"
+                  id="product-name"
+                  placeholder="Nhập tên sản phẩm"
+                  required
+                />
+              </div>
+              <div class="form-group">
+                <label for="product-price">Giá Sản Phẩm</label>
+                <input
+                  type="number"
+                  class="form-control"
+                  id="product-price"
+                  placeholder="Nhập giá sản phẩm"
+                  required
+                />
+              </div>
+              <div class="form-group">
+                <label for="short-text">Mô Tả Ngắn</label>
+                <textarea
+                  class="form-control"
+                  id="short-text"
+                  rows="2"
+                  placeholder="Nhập mô tả ngắn"
+                  required
+                ></textarea>
+              </div>
+              <div class="form-group">
+                <label for="long-text">Mô Tả Chi Tiết</label>
+                <textarea
+                  class="form-control"
+                  id="long-text"
+                  rows="4"
+                  placeholder="Nhập mô tả chi tiết"
+                  required
+                ></textarea>
+              </div>
+              <div class="form-group">
+                <label for="quantity">Số Lượng</label>
+                <input
+                  type="number"
+                  class="form-control"
+                  id="quantity"
+                  placeholder="Nhập số lượng"
+                  required
+                />
+              </div>
+              <div class="form-group">
+                <label for="category">Category</label>
+                <select class="form-control" id="category" required>
+                  <option value="2">Nước hoa</option>
+                  <option value="3">Sữa tắm</option>
+                  <option value="4">Mặt nạ</option>
+                  <option value="5">Son</option>
+                  <option value="6">Kem bôi</option>
+                  <option value="7">Thuốc uống</option>
+                  <option value="8">Sữa rửa mặt</option>
+                  <option value="9">Làm mắt</option>
+                  <option value="10">Phấn</option>
+                </select>
+              </div>
+              <div class="form-group">
+                <label for="product-image1">Hình Ảnh Sản Phẩm</label>
+                <input
+                  type="file"
+                  class="form-control"
+                  id="product-image1"
+                  required
+                />
+                <img
+                  id="image-preview1"
+                  src="#"
+                  alt="Image Preview"
+                  style="display: none; margin-top: 10px; max-width: 100%"
+                />
+              </div>
+              <div class="form-group">
+                <label for="product-image2">Hình Ảnh Sản Phẩm</label>
+                <input
+                  type="file"
+                  class="form-control"
+                  id="product-image2"
+                  required
+                />
+                <img
+                  id="image-preview2"
+                  src="#"
+                  alt="Image Preview"
+                  style="display: none; margin-top: 10px; max-width: 100%"
+                />
+              </div>
+              <button type="submit" class="btn btn-primary" id="add_product">
+                Thêm Sản Phẩm
+              </button>
+            </form>
+          </div>
+        </div>
+      </div>
+    </section>
+    <!-- Add Product Page Section End -->
+
+    <!-- Js Plugins -->
+    <script src="js/jquery-3.3.1.min.js"></script>
+    <script src="js/bootstrap.min.js"></script>
+    <script src="js/jquery.magnific-popup.min.js"></script>
+    <script src="js/jquery.slicknav.js"></script>
+    <script src="js/owl.carousel.min.js"></script>
+    <script src="js/jquery.nice-select.min.js"></script>
+    <script src="js/mixitup.min.js"></script>
+    <script src="js/main.js"></script>
+    <script src="js/admin_add-product-page.js"></script>
+  </body>
+</html>

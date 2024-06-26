@@ -6,7 +6,7 @@
     <meta name="keywords" content="Yoga, unica, creative, html" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <meta http-equiv="X-UA-Compatible" content="ie=edge" />
-    <title>Violet | Template</title>
+    <title>Cosmetics</title>
 
     <!-- Google Font -->
     <link
@@ -60,7 +60,7 @@
               <span>0</span>
             </a>
           </div>
-          
+
           <nav class="main-menu mobile-menu">
             <ul>
               <li><a href="./index.html">Trang chủ</a></li>
@@ -68,7 +68,9 @@
               <li><a href="./contact.html">Liên hệ</a></li>
               <li id="login"><a href="./login.html">Đăng nhập</a></li>
               <li id="register"><a href="./register.html">Đăng kí</a></li>
-              <li id="sign_out" style="display: none;"><a href="./login.html">Đăng xuất</a></li>
+              <li id="sign_out" style="display: none">
+                <a href="./login.html">Đăng xuất</a>
+              </li>
             </ul>
           </nav>
         </div>
@@ -89,17 +91,22 @@
               class="checkout-container col-lg-12"
               style="margin-left: 15px; margin-bottom: 50px"
             >
-              <div class="shipping-address row">
-                <div class="col-lg-10">
-                  <p><strong>Tên</strong> 012354835</p>
-                  <p>
-                    Phường Mộ Lao, Quận Hà Đông, Hà Nộiádawdasdaw ădawdsa ư dă
-                  </p>
-                </div>
-                <div class="col-lg-2">
-                  <button class="change-btn" id="change-address-btn">
-                    Change
-                  </button>
+              <div class="shipping-address row" style="display: contents">
+                <div class="form">
+                  <form>
+                    <div>
+                      <label for="">Tên người nhận: </label>
+                      <input type="text" id="name_received" required />
+                    </div>
+                    <div>
+                      <label for="">Số điện thoại: </label>
+                      <input type="text" id="phone_received" required />
+                    </div>
+                    <div>
+                      <label for="">Địa chỉ nhận hàng: </label>
+                      <input type="text" id="place_received" required />
+                    </div>
+                  </form>
                 </div>
               </div>
             </div>
@@ -133,19 +140,12 @@
               <h5>Choose a shipping</h5>
               <div class="chose-shipping">
                 <div class="cs-item">
-                  <input type="radio" name="cs" id="one" />
-                  <label for="one" class="active">
-                    Free Standard shhipping
-                    <span>Estimate for New York</span>
-                  </label>
+                  <input type="radio" name="cs" id="one" value="1" />
+                  <label for="one" class="active"> Ship nhanh </label>
                 </div>
                 <div class="cs-item">
-                  <input type="radio" name="cs" id="two" />
-                  <label for="two"> Next Day delievery $10 </label>
-                </div>
-                <div class="cs-item last">
-                  <input type="radio" name="cs" id="three" />
-                  <label for="three"> In Store Pickup - Free </label>
+                  <input type="radio" name="cs" id="two" value="2" />
+                  <label for="two"> Ship thường </label>
                 </div>
               </div>
             </div>
@@ -213,12 +213,12 @@
                     <input type="radio" id="two" />
                   </li>
                 </ul>
-                <button type="submit">Place your order</button>
+                <button type="submit" id="place-order">Place your order</button>
               </div>
             </div>
           </div>
         </form>
-        <!-- Modal Structure -->
+        <!-- Modal Structure
         <div id="address-modal" class="modal">
           <div class="modal-content">
             <h2>My Address</h2>
@@ -236,7 +236,7 @@
               <button class="confirm-btn" id="confirm-btn">Confirm</button>
             </div>
           </div>
-        </div>
+        </div> -->
       </div>
     </section>
     <!-- Cart Total Page End -->
@@ -346,22 +346,5 @@
     <script src="js/mixitup.min.js"></script>
     <script src="js/main.js"></script>
     <script src="js/checkout.js"></script>
-    <script>
-       function checkLogin(){
-      let user = JSON.parse(localStorage.getItem("user"));
-      if(!user)
-      {
-        document.getElementById("register").style.display="inline-block"
-        document.getElementById("login").style.display="inline-block"
-        document.getElementById("sign_out").style.display="none"
-      }
-      else{
-        document.getElementById("sign_out").style.display="inline-block"
-        document.getElementById("register").style.display="none"
-        document.getElementById("login").style.display="none"
-      }
-    }
-    checkLogin()
-    </script>
   </body>
 </html>

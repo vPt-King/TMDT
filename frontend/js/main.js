@@ -174,19 +174,19 @@
 		Check login
 	--------------------- */
   $(document).ready(function () {
-    // Check if user is logged in
-    var isLogin = true; // You need to set this based on your authentication logic
-
-    // Hide or show the links based on the login status
-    if (isLogin) {
-      $("#user-access").css("visibility", "hidden"); // Hide the user access container
+    let user = JSON.parse(localStorage.getItem("user"));
+    if (!user) {
+      document.getElementById("register").style.display = "inline-block";
+      document.getElementById("login").style.display = "inline-block";
+      document.getElementById("sign_out").style.display = "none";
     } else {
-      $("#shop-dropdown-menu").hide();
-      $("#shop-dropdown").attr("href", "./login.html"); // Redirect to login page
+      document.getElementById("sign_out").style.display = "inline-block";
+      document.getElementById("register").style.display = "none";
+      document.getElementById("login").style.display = "none";
     }
   });
   $(document).ready(function () {
-    let cartItems = JSON.parse(localStorage.getItem("cart"));
+    let cartItems = JSON.parse(localStorage.getItem("cart_products"));
     $(".header-right a[href='./shopping-cart.html'] span").text(
       cartItems.length
     );
