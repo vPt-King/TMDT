@@ -10,3 +10,19 @@ sudo docker network connect my-network frontend
 sudo docker network connect my-network mysql
 
 (Có thể phải chạy lại backend nếu cần)
+
+--------------------------------------------------------------------
+KUBERNETES:
+
+Chạy k8s cần cài: Docker, kubectl, minikube
+
+Để chạy cluster ta cần: minikube start --driver=kvm
+
+Tao namespace moi bang: kubectl create namespace tmdt
+
+B1: Tạo persistent volume và persistent volume claim cho mysql
+
+
+
+ConfigMap để gửi các file mysql vào trong sql k8s
+kubectl create configmap mysql-initdb --from-file=./sql-files
